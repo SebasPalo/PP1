@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sebaspalo.calculadora.MainActivity">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.4">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="35sp"
+        android:textColor="@color/dimgray"
+        android:background="@color/white"
+        android:textAlignment="textEnd"
+        android:id="@+id/eNumero"
+        android:text=""
+        />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="25sp"
+            android:textColor="@color/gray"
+            android:background="@color/white"
+            android:textAlignment="textEnd"
+            android:id="@+id/eResultado"
+            android:text=""
+            />
+    </LinearLayout>
+
+<!--1-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+
+        <!--2-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/LayoutStyle">
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b7"
+                    android:text="7" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b8"
+                    android:text="8" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b9"
+                    android:text="9" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LayoutStyle">
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b4"
+                    android:text="4" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b5"
+                    android:text="5" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b6"
+                    android:text="6" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/LayoutStyle">
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b1"
+                    android:text="1" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b2"
+                    android:text="2" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b3"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/LayoutStyle">
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/bpunto"
+                    android:text="." />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/b0"
+                    android:text="0" />
+                <Button style="@style/ButtonStyle"
+                    android:id="@+id/bigual"
+                    android:text="=" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!--f2-->
+
+        <!--3-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical">
+            <Button style="@style/ButtonStyle2"
+                android:id="@+id/bCE"
+                android:text="CE" />
+            <Button style="@style/ButtonStyle2"
+                android:id="@+id/bdiv"
+                android:text="/" />
+            <Button style="@style/ButtonStyle2"
+                android:id="@+id/bpor"
+                android:text="x" />
+            <Button style="@style/ButtonStyle2"
+                android:id="@+id/bresta"
+                android:text="-" />
+            <Button style="@style/ButtonStyle2"
+                android:id="@+id/bsuma"
+                android:text="+" />
+
+
+        </LinearLayout>
+        <!--f3-->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.04"
+            android:background="@color/mediumturquoise">
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--f1-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:background="@color/mediumturquoise">
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
