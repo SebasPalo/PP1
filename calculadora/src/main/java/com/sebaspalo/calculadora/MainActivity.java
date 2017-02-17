@@ -10,9 +10,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText eNumero, eResultado;
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,bCE,bdiv,bpor,bresta,bsuma,bigual,bpunto;
-    int flag1;
-    double op1,op2,resultado,resultado_temp;
-    String opp1,opp2, operador;
+    int flag1,flag2,flag3;
+    double op1,op2,resultado,resultado_temp,resultado_ant;
+    String opp1,opp2, operador=(""), operador_sig,opeaux;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 //op1=Double.parseDouble(eNumero.getText().toString());
                 opp1=eNumero.getText().toString();
                 eNumero.setText(eNumero.getText()+"+");}
-                else{eNumero.setText(opp1+"+");}
+                else{eNumero.setText(opp1+"+");flag3=0;}
                 flag1=1;
                 break;
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
                     eNumero.setText(eNumero.getText()+"-");}
-                else{eNumero.setText(opp1+"-");}
+                else{eNumero.setText(opp1+"-");flag3=0;}
                 flag1=1;
                 break;
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
                     eNumero.setText(eNumero.getText()+"*");}
-                else{eNumero.setText(opp1+"*");}
+                else{eNumero.setText(opp1+"*");flag3=0;}
                 flag1=1;
                 break;
 
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
                     eNumero.setText(eNumero.getText()+"/");}
-                else{eNumero.setText(opp1+"/");}
+                else{eNumero.setText(opp1+"/"); flag3=0;}
                 flag1=1;
                 break;
 
@@ -102,23 +102,39 @@ public class MainActivity extends AppCompatActivity {
         String frase = eNumero.getText().toString();
         String delims = "[+\\-*/]+"; // so the delimiters are:  + - * /
         String[] operandos = frase.split(delims);
-        if (operandos.length>1) {
-            for (int i = 0; i < operandos.length; i++){
+        int n=operandos.length;
+        if (flag1==1) {if (flag3==0){operador_sig=operador; operador=("");flag3=1;}
+                        else{opeaux=operador_sig;
+                             operador_sig=operador;
+                             operador=opeaux;}
+
+           // for (int i = 0; i < operandos.length; i++){
          //   System.out.println(operandos[i]);
                 //cadena.length()-1
-             if (operador.equals("+"))
-                resultado_temp = resultado_temp + Double.parseDouble(operandos[i]);
+             if (operador.equals("+")){
+                 if (flag2==0) {resultado = Double.parseDouble(operandos[0]) + Double.parseDouble(operandos[1]);
+                     flag2=1;}
+                 else resultado = resultado + Double.parseDouble(operandos[n-1]);}
                 //resultado = Double.parseDouble(operandos[0]) + Double.parseDouble(operandos[1]);
-             else if (operador.equals("-"))
-                resultado_temp = Double.parseDouble(operandos[0]) - Double.parseDouble(operandos[1]);
-             else if (operador.equals("*"))
-                resultado_temp = Double.parseDouble(operandos[0]) * Double.parseDouble(operandos[1]);
-             else resultado_temp = Double.parseDouble(operandos[0]) / Double.parseDouble(operandos[1]);
-            }
-            resultado=resultado_temp;
+             else if (operador.equals("-")){
+                 if (flag2==0) {resultado = Double.parseDouble(operandos[0]) - Double.parseDouble(operandos[1]);
+                     flag2=1;}
+                 else resultado = resultado - Double.parseDouble(operandos[n-1]);}
+             else if (operador.equals("*")){
+                 if (flag2==0) {resultado = Double.parseDouble(operandos[0]) * Double.parseDouble(operandos[1]);
+                     flag2=1;}
+                 else resultado = resultado * Double.parseDouble(operandos[n-1]);}
+             else if (operador.equals("/")){
+                 if (flag2==0) {resultado = Double.parseDouble(operandos[0]) / Double.parseDouble(operandos[1]);
+                     flag2=1;}
+                 else resultado = resultado / Double.parseDouble(operandos[n-1]);}
+             else eResultado.setText("hiho");
+
             eResultado.setText(String.valueOf(resultado));
-            resultado_temp=0;
-        }
+            }
+
+            //resultado_temp=0;
+
 
 
     }
