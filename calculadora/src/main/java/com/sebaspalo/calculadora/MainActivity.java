@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     EditText eNumero, eResultado;
     Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,bCE,bdiv,bpor,bresta,bsuma,bigual,bpunto;
     int flag1,flag2,flag3;
-    double op1,op2,resultado,resultado_temp,resultado_ant;
+    double resultado;
     String opp1,opp2, operador=(""), operador_sig,opeaux;
 
     @Override
@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         b4 = (Button) findViewById(R.id.b4);b5 = (Button) findViewById(R.id.b5);b6 = (Button) findViewById(R.id.b6);
         b7 = (Button) findViewById(R.id.b7);b8 = (Button) findViewById(R.id.b8);b9 = (Button) findViewById(R.id.b9);
         b0 = (Button) findViewById(R.id.b0);bsuma = (Button) findViewById(R.id.bsuma);bresta = (Button) findViewById(R.id.bresta);
+        bCE =(Button) findViewById(R.id.bCE);bdiv =(Button) findViewById(R.id.bdiv);bpor=(Button) findViewById(R.id.bpor);
+        bigual= (Button) findViewById(R.id.bigual);bpunto=(Button) findViewById(R.id.bpunto);
+
     }
 
     public void click(View view){
@@ -63,38 +66,46 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bpunto:eNumero.setText(eNumero.getText()+".");
                 flag1=0;
                 break;
+            case R.id.bCE:eNumero.setText("");
+                operador=("");
+                resultado=0;
+                eResultado.setText("");
+                flag1=3;  //para q no entre a ningun if
+                flag2=0; //para q vuelva a coger los dos primeros operandos
+                flag3=0;
+                break;
 
             case R.id.bsuma: operador="+";
                 if (flag1==0){
                 //op1=Double.parseDouble(eNumero.getText().toString());
                 opp1=eNumero.getText().toString();
-                eNumero.setText(eNumero.getText()+"+");}
-                else{eNumero.setText(opp1+"+");flag3=0;}
-                flag1=1;
+                eNumero.setText(eNumero.getText()+"+");flag1=1;}
+                else if (flag1==1){eNumero.setText(opp1+"+");flag3=0;flag1=1;}
+
                 break;
 
             case R.id.bresta: operador="-";
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
-                    eNumero.setText(eNumero.getText()+"-");}
-                else{eNumero.setText(opp1+"-");flag3=0;}
-                flag1=1;
+                    eNumero.setText(eNumero.getText()+"-");flag1=1;}
+                else if (flag1==1){eNumero.setText(opp1+"-");flag3=0;flag1=1;}
+
                 break;
 
             case R.id.bpor: operador="*";
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
-                    eNumero.setText(eNumero.getText()+"*");}
-                else{eNumero.setText(opp1+"*");flag3=0;}
-                flag1=1;
+                    eNumero.setText(eNumero.getText()+"*");flag1=1;}
+                else if (flag1==1){eNumero.setText(opp1+"*");flag3=0;flag1=1;}
+
                 break;
 
             case R.id.bdiv: operador="/";
                 if (flag1==0){
                     opp1=eNumero.getText().toString();
-                    eNumero.setText(eNumero.getText()+"/");}
-                else{eNumero.setText(opp1+"/"); flag3=0;}
-                flag1=1;
+                    eNumero.setText(eNumero.getText()+"/");flag1=1;}
+                else if (flag1==1){eNumero.setText(opp1+"/"); flag3=0;flag1=1;}
+
                 break;
 
 
@@ -103,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         String delims = "[+\\-*/]+"; // so the delimiters are:  + - * /
         String[] operandos = frase.split(delims);
         int n=operandos.length;
-        if (flag1==1) {if (flag3==0){operador_sig=operador; operador=("");flag3=1;}
+        if (flag1==1) {if (flag3==0){operador_sig=operador; operador=("");flag3=1;}//para q no entre a los if del operador..saber si ya habia operador
                         else{opeaux=operador_sig;
                              operador_sig=operador;
                              operador=opeaux;}
