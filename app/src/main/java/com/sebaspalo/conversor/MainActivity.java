@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,9 +38,15 @@ public class MainActivity extends AppCompatActivity {
                     pesos = dolares * 3000;
                     ePesos.setText(pesos.toString());
 
-                } else {
+                }
+                else if (ePesos.getText().toString().equals("") && eDolares.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(),"Digite cantidad a convertir",Toast.LENGTH_LONG).show();
+
+                }
+                else {
                     ePesos.setText("");
                     eDolares.setText("");
+                    Toast.makeText(getApplicationContext(),"Debe haber un campo vacio para realizar la conversión",Toast.LENGTH_LONG).show();
                 }
 
             }
