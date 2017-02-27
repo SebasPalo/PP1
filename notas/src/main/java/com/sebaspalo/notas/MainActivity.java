@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-
-
                 if (!eN1.getText().toString().equals("") && !eN1.getText().toString().startsWith(".")){n1=Double.parseDouble(eN1.getText().toString());}
                 else {n1=0.0; eN1.setText("0.0");}
                 if (!eN2.getText().toString().equals("")&& !eN2.getText().toString().startsWith(".")){n2=Double.parseDouble(eN2.getText().toString());}
