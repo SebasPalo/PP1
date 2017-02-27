@@ -11,7 +11,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/calculadora" />
+            <option value="$PROJECT_DIR$/geomecalc" />
             <option value="$PROJECT_DIR$/notas" />
+            <option value="$PROJECT_DIR$/resistorcalcu" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

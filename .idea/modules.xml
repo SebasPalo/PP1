@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/Conversor.iml" filepath="$PROJECT_DIR$/Conversor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/calculadora/calculadora.iml" filepath="$PROJECT_DIR$/calculadora/calculadora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geomecalc/geomecalc.iml" filepath="$PROJECT_DIR$/geomecalc/geomecalc.iml" />
       <module fileurl="file://$PROJECT_DIR$/notas/notas.iml" filepath="$PROJECT_DIR$/notas/notas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resistorcalcu/resistorcalcu.iml" filepath="$PROJECT_DIR$/resistorcalcu/resistorcalcu.iml" />
     </modules>
   </component>
 </project>

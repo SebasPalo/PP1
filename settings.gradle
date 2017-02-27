@@ -1,1 +1,1 @@
-include ':app', ':calculadora', ':notas'
+include ':app', ':calculadora', ':notas', ':geomecalc', ':resistorcalcu'
