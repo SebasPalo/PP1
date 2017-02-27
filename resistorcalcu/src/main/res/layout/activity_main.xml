@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.sebaspalo.resistorcalcu.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RGroup"
+            android:orientation="horizontal">
+
+            <RadioButton style="@style/RadioButtonStyle"
+                android:text="4 Bandas"
+                android:id="@+id/RB1"
+                />
+            <RadioButton style="@style/RadioButtonStyle"
+                android:text="5 Bandas"
+                android:id="@+id/RB2"
+                />
+            <RadioButton style="@style/RadioButtonStyle"
+                android:text="6 Bandas"
+                android:id="@+id/RB3"
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/datass"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1"
+                >
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1.1"
+                android:layout_height="0dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.1"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.4"
+                    android:layout_height="match_parent">
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b1"
+                        />
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b2"
+                        />
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b3"
+                        />
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b4"
+                        />
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b5"
+                        />
+                    <Button style="@style/ButtonStyle"
+                        android:id="@+id/b6"
+                        />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"></LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.1">
+            </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="10000"
+                android:id="@+id/tValor"/>
+            <TextView style="@style/TextViewStyle"
+                android:text="Ω" />
+            <TextView style="@style/TextViewStyle"
+                android:text="±"
+                />
+            <TextView style="@style/TextViewStyle"
+                android:text="1.0"
+                android:id="@+id/tTolerancia"/>
+            <TextView style="@style/TextViewStyle"
+                android:text="%"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView style="@style/TextViewStyle"
+                android:text="Coeficiente Temp:"
+                android:textSize="25sp"
+                />
+            <TextView style="@style/TextViewStyle"
+                android:text="0.0"
+                android:id="@+id/tTemp"/>
+            <TextView style="@style/TextViewStyle"
+                android:textSize="15sp"
+                android:text="  PPM/Cº"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
